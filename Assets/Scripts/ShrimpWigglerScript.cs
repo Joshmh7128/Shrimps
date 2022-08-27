@@ -18,7 +18,6 @@ public class ShrimpWigglerScript : MonoBehaviour
 
     IEnumerator WiggleStep()
     {
-        Debug.Log("running wiggle step");
         // run our wiggle step
         yield return new WaitForSecondsRealtime(wiggleTime);
         // run our WiggleUpdate()
@@ -30,7 +29,6 @@ public class ShrimpWigglerScript : MonoBehaviour
     // updates the wiggle
     void WiggleUpdate()
     {
-        Debug.Log("running wiggle update");
         // wiggle the arms!
         foreach (Rigidbody arm in wiggleArms)
         {
