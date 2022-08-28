@@ -16,6 +16,8 @@ public class shrimpMove : MonoBehaviour
     float moveSpeed = 1f;
     float jumpSpeed = 2f;
 
+    Vector3 shrimpDirection; // the direction we want to move in 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,14 +33,17 @@ public class shrimpMove : MonoBehaviour
     public void ShrimpMove() 
     {
         xDirection = Input.GetAxisRaw("Horizontal"); //this is the vector3.right axis
-        zDirection = Input.GetAxisRaw("Vertical");  //this is the vector3.forward axis.
-        Vector3 shrimpDirection = new Vector3(xDirection * camera.right.x, yDirection, zDirection * camera.forward.z);
+        zDirection = Input.GetAxisRaw("Vertical");  //this is the vector3.forward axis
 
-        if (shrimpDirection.magnitude >= 0.1f)
+        if (Mathf.Abs(xDirection + zDirection) >= 0.1f)
         {
+            // we want to move in the direction that the camera is facing
+
+            shrimpDirection = new Vector3(xDirection * camera.right.x, yDirection, zDirection * camera.forward.z).normalized;
+
             shrimpLeg.AddForce(shrimpDirection * moveSpeed);
         }
-        else if (shrimpDirection.magnitude < 0.1f)
+        else if (Mathf.Abs(xDirection + zDirection) < 0.1f)
         {
             Vector3 vel = shrimpLeg.velocity; // current velocity
             // apply X% of velocity in the other direction
