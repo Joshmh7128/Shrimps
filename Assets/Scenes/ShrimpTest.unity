@@ -6525,6 +6525,7 @@ MonoBehaviour:
   player: {fileID: 1080144738}
   lerpTarget: {fileID: 899127721}
   lerpSpeed: 2
+  lookSpeed: 2
 --- !u!1 &1527062864
 GameObject:
   m_ObjectHideFlags: 0
