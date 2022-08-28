@@ -3449,6 +3449,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884958916}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &899127720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 899127721}
+  m_Layer: 0
+  m_Name: LerpTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &899127721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899127720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.6, z: -4.23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1080144738}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1005095898
 GameObject:
   m_ObjectHideFlags: 0
@@ -4542,6 +4572,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1080144738}
   - component: {fileID: 1080144739}
+  - component: {fileID: 1080144740}
+  - component: {fileID: 1080144741}
   m_Layer: 0
   m_Name: Shrimp
   m_TagString: Untagged
@@ -4572,6 +4604,7 @@ Transform:
   - {fileID: 643856670}
   - {fileID: 695128243}
   - {fileID: 1699279346}
+  - {fileID: 899127721}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4629,6 +4662,36 @@ MonoBehaviour:
   - {fileID: 1192850492}
   - {fileID: 1047564726}
   - {fileID: 2037370385}
+--- !u!114 &1080144740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080144737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8969ca3f16a5d428ab9c6c8e3e4f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 1442312047}
+  moveSpeed: 3
+--- !u!54 &1080144741
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080144737}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &1086822161
 GameObject:
   m_ObjectHideFlags: 0
@@ -6373,6 +6436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1442312047}
   - component: {fileID: 1442312046}
+  - component: {fileID: 1442312048}
   - component: {fileID: 1442312045}
   m_Layer: 0
   m_Name: Main Camera
@@ -6439,13 +6503,28 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442312044}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.24498212, y: -0, z: -0, w: 0.9695276}
+  m_LocalPosition: {x: 0, y: 4.93, z: -3.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 28.362, y: 0, z: 0}
+--- !u!114 &1442312048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442312044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea0f9772bc1b77b4da549e6a78dc38a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1080144738}
+  lerpTarget: {fileID: 899127721}
+  lerpSpeed: 2
 --- !u!1 &1527062864
 GameObject:
   m_ObjectHideFlags: 0
